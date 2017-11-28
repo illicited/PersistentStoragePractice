@@ -1,4 +1,4 @@
-package com.cavendersoftworks.persistentstoragepractice;
+package com.cavendersoftworks.persistentstoragepractice.Data;
 
 import java.util.UUID;
 

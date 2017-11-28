@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cavendersoftworks.persistentstoragepractice.Data.DataItem;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,9 +21,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     public static final String FILENAME = "test.txt";
     public static final int REQUEST_WRITE_PERMISSION = 1002;
-    private boolean permissionGranted;
-    TextView output;
-    ArrayList<DataItem> dataItems = new ArrayList<>();
+    private TextView output;
+    private ArrayList<DataItem> dataItems = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Error generating file: " + e.getMessage(), Toast.LENGTH_LONG).show();
         } finally {
             try {
+                assert fos != null;
                 fos.close();
             } catch (Exception e) {
                 e.printStackTrace();
