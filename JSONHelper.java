@@ -12,9 +12,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class JSONHelper {
+class JSONHelper {
 
-    public static String exportToJSON(ArrayList<DataItem> dataItems) {
+    static String exportToJSON(ArrayList<DataItem> dataItems) {
         DataItems da = new DataItems();
         da.dataItems = dataItems;
 
@@ -24,7 +24,7 @@ public class JSONHelper {
         return jsonString;
     }
 
-    public static ArrayList<DataItem> importFromJSON(Context context) {
+    static ArrayList<DataItem> importFromJSON(Context context) {
         FileReader reader = null;
 
         try {
@@ -52,11 +52,11 @@ public class JSONHelper {
     static class DataItems {
         ArrayList<DataItem> dataItems;
 
-        public ArrayList<DataItem> getDataItems() {
+        ArrayList<DataItem> getDataItems() {
             return dataItems;
         }
 
-        public void setDataItems(ArrayList<DataItem> dataItems) {
+        void setDataItems(ArrayList<DataItem> dataItems) {
             this.dataItems = dataItems;
         }
     }

@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<DataItem> dataItemList = JSONHelper.importFromJSON(this);
         if(dataItemList != null) {
             for(DataItem da : dataItemList) {
-                sb.append(da.getUID() + "\n" + da.getName() + "\n" + da.getDesc() + "\n");
+                sb.append(da.getUID()).append("\n").append(da.getName()).append("\n").append(da.getDesc()).append("\n");
             }
             output.setText(sb.toString());
         } else {
